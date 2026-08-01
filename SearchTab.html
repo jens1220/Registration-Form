@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Directory - Search</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+
+  <div class="search-container">
+    <!-- Navigation Bar -->
+    <nav class="search-nav">
+      <div class="title">Employee Directory</div>
+      <a href="index.html" class="optionbttn">Back to Registration</a>
+    </nav>
+
+    <!-- Two-Panel Main Content -->
+    <div class="search-content">
+
+      <!-- Left Panel: Search & Results List -->
+      <div class="left-panel">
+        <input type="text" id="searchInput" placeholder="Search by name or position..." onkeyup="filterEmployees()">
+        <ul id="employeeList" class="employee-list">
+          <!-- Populated dynamically via JS -->
+        </ul>
+      </div>
+
+      <!-- Right Panel: View & Edit Details -->
+      <div class="right-panel" id="detailsPanel">
+        <div class="empty-state" id="emptyState">
+          <p>Select an employee from the list to view or edit their details.</p>
+        </div>
+
+        <form id="editForm" class="edit-form hidden">
+          <div class="profile-preview">
+            <img id="editPhoto" src="https://via.placeholder.com/120" alt="Face Photo">
+          </div>
+
+          <div class="user-details">
+            <div class="input-box">
+              <label for="editFirstName">First Name</label>
+              <input type="text" id="editFirstName">
+            </div>
+            <div class="input-box">
+              <label for="editLastName">Last Name</label>
+              <input type="text" id="editLastName">
+            </div>
+            <div class="input-box">
+              <label for="editMiddleName">Middle Name</label>
+              <input type="text" id="editMiddleName">
+            </div>
+            <div class="input-box">
+              <label for="editAge">Age</label>
+              <input type="number" id="editAge">
+            </div>
+            <div class="input-box">
+              <label for="editPosition">Position</label>
+              <input type="text" id="editPosition">
+            </div>
+            <div class="input-box">
+              <label for="editBday">Birthday</label>
+              <input type="date" id="editBday">
+            </div>
+            <div class="input-box">
+              <label for="editEmail">Email</label>
+              <input type="email" id="editEmail">
+            </div>
+            <div class="input-box">
+              <label for="editGender">Gender</label>
+              <select id="editGender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="save-btn" onclick="saveEmployeeChanges()">Save Changes</button>
+            <button type="button" class="delete-btn" onclick="deleteEmployee()">Delete Employee</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="search.js"></script>
+</body>
+
+</html>
